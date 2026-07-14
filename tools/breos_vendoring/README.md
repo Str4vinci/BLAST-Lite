@@ -15,6 +15,12 @@ Current artifacts:
   contract, including daily endpoint grid construction and cross-year snapshots.
 - `generate_golden_fixtures.py`: writes all-model 100-day SoH trajectories from
   this untransformed checkout for later BREOS parity tests.
+- `generate_parity_fixtures.py`: writes every model's literal parameters
+  (`cap`, `_params_life`, `experimental_range`) plus multi-condition golden
+  trajectories (hot/cold storage, deep and shallow-fast cycling,
+  intraday-varying temperature) so BREOS can assert parameter equality and
+  transform neutrality at 1e-12 across operating points the 100-day fixture
+  does not activate.
 - `tests/test_breos_vendoring.py`: smoke checks for the manifest, catalog, daily
   endpoint grid, model stepping, snapshot continuity, and golden fixture parity.
 
